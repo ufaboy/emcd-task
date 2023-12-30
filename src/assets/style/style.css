@@ -1,1 +1,25 @@
-@import './tailwind.css'
+@import './tailwind.css';
+
+
+.underline {
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    color: black;
+}
+
+.underline::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: black;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.underline:hover::after {
+    width: 100%;
+    left: 0;
+}

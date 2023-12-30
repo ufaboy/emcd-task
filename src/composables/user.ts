@@ -32,9 +32,9 @@ export function useUsers() {
 			const url = getUrl(query.value);
 			loading.value = true;
 			const response = await fetchData<UserResponse>(url);
-			/* I usually use this code: users.value.push(...response.results);
-      There is an opinion that this method is not much inferior to apply */
-			Array.prototype.push.apply(users.value, response.results);
+			/* I usually use this code, there is an opinion that this method is not much inferior to apply:
+			Array.prototype.push.apply(users.value, response.results); */
+			users.value.push(...response.results);
 		} catch (error) {
 			console.log('getUsers error:', error);
 		} finally {

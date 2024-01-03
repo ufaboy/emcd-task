@@ -40,14 +40,13 @@ onMounted(() => {
 onBeforeUnmount(() => {
 	observer.value?.disconnect();
 });
-
 </script>
 
 <template>
-    		<h1 class="mb-8 px-4 py-2">User List</h1>
-		<!-- new syntax 3.4 short same bind :user -->
-		<UserCard v-for="(user, index) in users" :key="index" :user class="mt-3 first:mt-0" />
-		<div v-if="observerShow" ref="observerElement" class="flex justify-center items-center">
-			<IconSpinner />
-		</div>
+	<h1 class="mb-8 px-4 py-2">User List</h1>
+	<!-- new syntax 3.4 short same bind :user -->
+	<UserCard v-for="(user, index) in users" :key="index" :user class="mt-3 first:mt-0" />
+	<div v-if="observerShow" ref="observerElement" class="flex justify-center items-center">
+		<IconSpinner />
+	</div>
 </template>
